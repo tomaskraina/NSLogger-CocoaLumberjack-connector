@@ -7,7 +7,6 @@
 
 // NSLogger is needed: http://github.com/fpillet/NSLogger
 #import "LoggerClient.h"
-#import <DDLegacy.h>
 
 @interface DDNSLoggerLogger ()
 
