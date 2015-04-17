@@ -4,7 +4,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CocoaLumberjack/DDLogMacros.h>
+
+#ifndef DDNSL_FRAMEWORK_LINKING_DISABLED
+    #define DDNSL_FRAMEWORK_LINKING_DISABLED 0
+#endif
+
+#if DDNSL_FRAMEWORK_LINKING_DISABLED
+    #import "DDLogMacros.h"
+#else
+    #import <CocoaLumberjack/DDLogMacros.h>
+#endif
 
 @interface DDNSLoggerLogger : DDAbstractLogger <DDLogger>
 
