@@ -61,7 +61,7 @@ static DDNSLoggerLogger *sharedInstance;
 
     if (logMsg) {
         int nsloggerLogLevel;
-        switch (logMessage.flag) {
+        switch (logMessage.level) {
                 // NSLogger log levels start a 0, the bigger the number,
                 // the more specific / detailed the trace is meant to be
             case DDLogLevelError: nsloggerLogLevel = 0; break;
@@ -70,8 +70,8 @@ static DDNSLoggerLogger *sharedInstance;
             default: nsloggerLogLevel             = 3; break;
         }
         
-        LogMessageF([logMessage.file UTF8String], logMessage.line, [logMessage.function UTF8String],
-					logMessage.fileName, nsloggerLogLevel, @"%@", logMsg);
+        LogMessageF([logMessage.file UTF8String], (int)logMessage.line, [logMessage.function UTF8String],
+                    logMessage.fileName, nsloggerLogLevel, @"%@", logMsg);
     }
 }
 
