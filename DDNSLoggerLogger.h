@@ -4,7 +4,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DDLog.h"
+#import <CocoaLumberjack/DDLog.h>
 
 @interface DDNSLoggerLogger : DDAbstractLogger <DDLogger>
 
