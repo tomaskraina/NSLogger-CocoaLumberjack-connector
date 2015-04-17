@@ -69,9 +69,9 @@ static DDNSLoggerLogger *sharedInstance;
             case DDLogLevelInfo: nsloggerLogLevel  = 2; break;
             default: nsloggerLogLevel             = 3; break;
         }
-
-        LogMessageF(logMessage.file, logMessage.line, logMessage.function, logMessage.fileName,
-                    nsloggerLogLevel, @"%@", logMsg);
+        
+        LogMessageF([logMessage.file UTF8String], logMessage.line, [logMessage.function UTF8String],
+					logMessage.fileName, nsloggerLogLevel, @"%@", logMsg);
     }
 }
 
